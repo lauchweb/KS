@@ -158,20 +158,20 @@
     }
 
     /*
-      INVISIBLE FICTIVE GRID
+      FICTIVE GRID
 
-      The grid exists only as a structure.
+      The structure is real,
+      but nothing is visibly drawn.
 
       Desktop: 4 positions
       Tablet: 3 positions
       Mobile: 2 positions
 
-      There are NO borders.
-      There are NO boxes.
-      There are NO backgrounds.
+      Every position contains one work.
 
-      The artworks themselves are visible.
-      Each artwork keeps its natural proportions.
+      The cells have a consistent height so that
+      the underlying grid remains perceptible
+      even when artworks have different proportions.
     */
 
     .archive-grid {
@@ -187,21 +187,25 @@
 
       margin-top: 120px;
 
-      align-items: start;
+      align-items: stretch;
     }
 
     /*
-      Each artwork simply occupies one grid position.
+      Each artwork occupies a complete invisible cell.
 
-      No fixed image ratio.
-      No cropping.
-      No stretching.
+      The cell has no border and no background.
+
+      The artwork is allowed to keep its own
+      natural proportions.
     */
 
     .archive-item {
-      display: block;
-
       width: 100%;
+      min-width: 0;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
 
       text-decoration: none;
 
@@ -212,13 +216,27 @@
       opacity: 0.5;
     }
 
+    /*
+      Image remains natural.
+
+      No cropping.
+      No stretching.
+      No forced aspect ratio.
+
+      max-height prevents an unusually tall work
+      from destroying the rhythm of the grid.
+    */
+
     .archive-image {
       display: block;
 
       width: 100%;
       height: auto;
 
+      max-height: 420px;
+
       object-fit: contain;
+      object-position: top left;
     }
 
     /*
@@ -321,6 +339,10 @@
 
         margin-top: 90px;
       }
+
+      .archive-image {
+        max-height: 360px;
+      }
     }
 
     /*
@@ -349,6 +371,10 @@
         row-gap: 58px;
 
         margin-top: 70px;
+      }
+
+      .archive-image {
+        max-height: 300px;
       }
 
       .links {
@@ -382,6 +408,10 @@
         row-gap: 48px;
 
         margin-top: 60px;
+      }
+
+      .archive-image {
+        max-height: 260px;
       }
 
       .links {
@@ -431,13 +461,18 @@
           P
         </a>
 
+
         <!--
           ARCHIVE
 
           Invisible fictive grid.
 
-          Every artwork occupies one grid position.
-          The grid lines themselves are never shown.
+          Desktop: 4 works per row.
+          Tablet: 3 works per row.
+          Mobile: 2 works per row.
+
+          Every position contains a work.
+          The grid itself is never drawn.
         -->
 
         <div class="archive-grid">
@@ -612,10 +647,6 @@
 
         </div>
 
-        <!--
-          Navigation
-          Living Room intentionally removed.
-        -->
 
         <nav
           class="links"
@@ -655,6 +686,7 @@
       </section>
 
     </main>
+
 
     <footer>
 
