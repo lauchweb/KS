@@ -145,7 +145,9 @@
 
     /*
       Small identity mark.
+
       No visible "Archive" heading.
+      The works are the archive.
     */
 
     .name {
@@ -161,16 +163,19 @@
     /*
       FICTIVE GRID
 
-      The grid is invisible.
+      The grid is structural but invisible.
 
-      There are no borders,
-      boxes,
-      or visible lines.
+      Desktop: 4 positions across.
+      Tablet: 3 positions across.
+      Mobile: 2 positions across.
 
-      Every position contains a work.
+      Every position contains an actual work.
 
-      The space between works creates
-      the breathing room.
+      There are no borders or visible grid lines.
+
+      The fixed height of each position makes
+      the underlying grid perceptible without
+      turning it into a visible gallery system.
     */
 
     .archive-grid {
@@ -190,9 +195,13 @@
     }
 
     .archive-item {
-      display: block;
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: center;
 
       width: 100%;
+      height: 360px;
 
       text-decoration: none;
 
@@ -204,17 +213,20 @@
     }
 
     /*
-      Natural image proportions.
+      The artwork keeps its own proportions.
 
-      Nothing is cropped into a fixed ratio.
-      Each work keeps its own shape.
+      Nothing is cropped.
+      Nothing is stretched.
+
+      The image sits inside its invisible
+      grid position.
     */
 
     .archive-image {
       display: block;
 
       width: 100%;
-      height: auto;
+      height: 100%;
 
       object-fit: contain;
     }
@@ -318,6 +330,10 @@
 
         margin-top: 90px;
       }
+
+      .archive-item {
+        height: 300px;
+      }
     }
 
     /*
@@ -346,6 +362,10 @@
         row-gap: 58px;
 
         margin-top: 70px;
+      }
+
+      .archive-item {
+        height: 250px;
       }
 
       .links {
@@ -379,6 +399,10 @@
         row-gap: 48px;
 
         margin-top: 60px;
+      }
+
+      .archive-item {
+        height: 210px;
       }
 
       .links {
@@ -428,16 +452,15 @@
           P
         </a>
 
-
         <!--
-          ARCHIVE WORKS
-
-          Invisible 4-column grid on desktop.
-          Invisible 3-column grid on tablet.
-          Invisible 2-column grid on mobile.
+          INVISIBLE FICTIVE GRID
 
           Every position contains a work.
-          No visible grid lines.
+          The positions themselves are not drawn.
+
+          Desktop: 4 columns
+          Tablet: 3 columns
+          Mobile: 2 columns
         -->
 
         <div class="archive-grid">
@@ -456,7 +479,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-02.html"
@@ -470,7 +492,6 @@
               decoding="async"
             >
           </a>
-
 
           <a
             class="archive-item"
@@ -486,7 +507,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-04.html"
@@ -500,7 +520,6 @@
               decoding="async"
             >
           </a>
-
 
           <a
             class="archive-item"
@@ -516,7 +535,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-06.html"
@@ -530,7 +548,6 @@
               decoding="async"
             >
           </a>
-
 
           <a
             class="archive-item"
@@ -546,7 +563,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-08.html"
@@ -560,7 +576,6 @@
               decoding="async"
             >
           </a>
-
 
           <a
             class="archive-item"
@@ -576,7 +591,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-10.html"
@@ -591,7 +605,6 @@
             >
           </a>
 
-
           <a
             class="archive-item"
             href="/work-11.html"
@@ -605,7 +618,6 @@
               decoding="async"
             >
           </a>
-
 
           <a
             class="archive-item"
@@ -622,12 +634,6 @@
           </a>
 
         </div>
-
-
-        <!--
-          Navigation
-          Living Room is intentionally absent.
-        -->
 
         <nav
           class="links"
@@ -667,7 +673,6 @@
       </section>
 
     </main>
-
 
     <footer>
 
