@@ -3,83 +3,33 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Artist Name — About</title>
+  <title>P</title>
 
   <meta
     name="description"
-    content="Artist Name — About."
+    content="P"
   >
-
-  <meta name="author" content="Artist Name">
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-
-  <!-- Use the exact URL of this About page -->
-  <link rel="canonical" href="https://www.yourwebsite.com/about.html">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4f2ed">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Artist Name — About">
-  <meta
-    property="og:description"
-    content="Artist Name — About."
-  >
-  <meta property="og:url" content="https://www.yourwebsite.com/about.html">
-  <meta property="og:site_name" content="Artist Name">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <!-- Replace with your actual social preview image -->
-  <meta
-    property="og:image"
-    content="https://www.yourwebsite.com/images/og-image.jpg"
-  >
-  <meta
-    property="og:image:alt"
-    content="Artwork by Artist Name"
-  >
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
 
-  <!-- X / Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Artist Name — About">
-  <meta
-    name="twitter:description"
-    content="Artist Name — About."
-  >
-  <meta
-    name="twitter:image"
-    content="https://www.yourwebsite.com/images/og-image.jpg"
-  >
-  <meta
-    name="twitter:image:alt"
-    content="Artwork by Artist Name"
-  >
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <style>
     :root {
-      --background: #f4f2ed;
-      --text: #171614;
-      --muted: #5f5c56;
-      --light: #8a867e;
-      --line: #d8d4cc;
-
-      --serif:
-        "Iowan Old Style",
-        "Baskerville",
-        "Times New Roman",
-        serif;
-
-      --sans:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+      --black: #111111;
+      --light: #888888;
+      --background: #ffffff;
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -93,18 +43,28 @@
     body {
       min-height: 100vh;
       background: var(--background);
-      color: var(--text);
+      color: var(--black);
 
-      font-family: var(--sans);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
       font-weight: 400;
-
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
 
+    a {
+      color: inherit;
+    }
+
     ::selection {
-      background: var(--text);
+      background: var(--black);
       color: var(--background);
     }
 
@@ -112,248 +72,136 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 34px 48px 26px;
+      padding: 42px 48px 28px;
     }
-
-    /* Header */
-
-    header {
-      width: 100%;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-
-      font-size: 13px;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-    }
-
-    .artist-name {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-
-      transition: opacity 180ms ease;
-    }
-
-    .artist-name:hover {
-      opacity: 0.55;
-    }
-
-    .header-label {
-      color: var(--light);
-      font-size: 12px;
-    }
-
-    /* Main */
 
     main {
       flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about {
       width: 100%;
+      max-width: 680px;
 
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 60px 0;
     }
-
-    .content {
-      width: 100%;
-      max-width: 960px;
-
-      margin: 0 auto;
-
-      padding: 112px 0 120px;
-    }
-
-    /* Heading */
-
-    h1 {
-      margin-bottom: 72px;
-
-      font-family: var(--serif);
-
-      font-size: clamp(64px, 9vw, 116px);
-      line-height: 0.88;
-
-      font-weight: 400;
-      letter-spacing: -0.055em;
-
-      color: var(--text);
-    }
-
-    /* About text */
 
     .about-text {
-      max-width: 680px;
+      width: 100%;
     }
 
     .about-text p {
       margin-bottom: 30px;
 
-      font-size: 17px;
-      line-height: 1.76;
+      color: var(--black);
 
+      font-size: 14px;
+      line-height: 1.7;
       font-weight: 400;
-      letter-spacing: -0.006em;
-
-      color: var(--muted);
+      letter-spacing: -0.005em;
     }
 
     .about-text p:last-child {
       margin-bottom: 0;
     }
 
-    /* Navigation */
-
     .links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      justify-content: center;
+      gap: 34px;
 
-      margin-top: 76px;
-      padding-top: 22px;
-
-      border-top: 1px solid var(--line);
+      margin-top: 72px;
     }
 
-    .links a {
-      position: relative;
-
-      color: var(--text);
+    .section-link {
+      color: var(--black);
       text-decoration: none;
 
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.5;
-
       font-weight: 500;
       letter-spacing: -0.005em;
+
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 3px;
 
       transition: opacity 180ms ease;
     }
 
-    .links a::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: -4px;
-
-      width: 100%;
-      height: 1px;
-
-      background: var(--text);
-
-      transform: scaleX(0);
-      transform-origin: right;
-
-      transition: transform 220ms ease;
+    .section-link:hover {
+      opacity: 0.5;
     }
 
-    .links a:hover {
-      opacity: 0.65;
+    .section-link:focus-visible,
+    footer a:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 4px;
     }
-
-    .links a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    /* Footer */
 
     footer {
       width: 100%;
+      text-align: center;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-
-      padding-top: 24px;
-
-      border-top: 1px solid var(--line);
+      padding-top: 30px;
 
       color: var(--light);
 
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.5;
-      letter-spacing: 0.005em;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
     }
 
     footer a {
       color: var(--light);
       text-decoration: none;
 
-      transition: color 180ms ease;
+      transition: opacity 180ms ease;
     }
 
     footer a:hover {
-      color: var(--text);
+      opacity: 0.5;
     }
 
-    /* Mobile */
-
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
 
       .page {
-        padding: 26px 24px 22px;
+        padding: 28px 24px 22px;
       }
 
-      header {
-        font-size: 12px;
-      }
-
-      .header-label {
-        font-size: 11px;
-      }
-
-      .content {
-        padding: 76px 0 90px;
-      }
-
-      h1 {
-        margin-bottom: 48px;
-
-        font-size: clamp(58px, 17vw, 82px);
-        line-height: 0.9;
-
-        letter-spacing: -0.06em;
-      }
-
-      .about-text {
+      .about {
         max-width: 100%;
+        padding: 40px 0;
       }
 
       .about-text p {
         margin-bottom: 25px;
 
-        font-size: 15.5px;
-        line-height: 1.75;
-
-        letter-spacing: -0.004em;
+        font-size: 13px;
+        line-height: 1.7;
       }
 
       .links {
+        gap: 22px;
         margin-top: 58px;
-        padding-top: 19px;
-
-        gap: 24px;
       }
 
-      .links a {
+      .section-link {
         font-size: 13px;
       }
 
       footer {
-        font-size: 10.5px;
+        padding-top: 24px;
       }
     }
-
-    /* Small phones */
 
     @media (max-width: 380px) {
 
@@ -362,16 +210,18 @@
         padding-right: 20px;
       }
 
-      .content {
-        padding-top: 64px;
+      .about-text p {
+        font-size: 12px;
       }
 
-      h1 {
-        font-size: 54px;
+      .links {
+        gap: 16px;
+      }
+
+      .section-link {
+        font-size: 12px;
       }
     }
-
-    /* Reduced motion */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -379,11 +229,10 @@
         scroll-behavior: auto;
       }
 
-      .artist-name,
-      .links a,
-      .links a::after,
-      footer a {
-        transition: none;
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -393,21 +242,9 @@
 
   <div class="page">
 
-    <header>
-      <a class="artist-name" href="index.html">
-        Artist Name
-      </a>
-
-      <span class="header-label">
-        About
-      </span>
-    </header>
-
     <main>
 
-      <section class="content" aria-labelledby="about-title">
-
-        <h1 id="about-title">About</h1>
+      <article class="about">
 
         <div class="about-text">
 
@@ -476,11 +313,11 @@
           <p>
             The process develops through repetition, editing, layering,
             combination, and experimentation. A gesture may be kept because
-            something in it feels unresolved; a form may be repeated until
-            it begins to shift; an image may be altered without knowing
-            exactly what is being sought. Documentation and archiving become
-            part of this process, not simply as records, but as material that
-            can be returned to, reworked, and seen differently over time.
+            something in it feels unresolved; a form may be repeated until it
+            begins to shift; an image may be altered without knowing exactly
+            what is being sought. Documentation and archiving become part of
+            this process, not simply as records, but as material that can be
+            returned to, reworked, and seen differently over time.
           </p>
 
           <p>
@@ -490,8 +327,7 @@
             followed before it is understood, and a decision made without
             knowing where it will lead. What begins intuitively can gradually
             take shape as an image, a feeling, or an idea. Uncertainty is not
-            something to resolve, but part of what allows the work to
-            develop.
+            something to resolve, but part of what allows the work to develop.
           </p>
 
           <p>
@@ -516,21 +352,31 @@
         </div>
 
         <nav class="links" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="process.html">Process</a>
+
+          <a
+            class="section-link"
+            href="/"
+          >
+            Home
+          </a>
+
+          <a
+            class="section-link"
+            href="/process.html"
+          >
+            Process
+          </a>
+
         </nav>
 
-      </section>
+      </article>
 
     </main>
 
     <footer>
-      <span>Artist Name © 2026</span>
-
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </div>
+      P © 2025–2026 ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
     </footer>
 
   </div>
