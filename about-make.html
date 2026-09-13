@@ -3,21 +3,80 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Kerân Sam — About</title>
+  <title>Artist Name — About</title>
 
   <meta
     name="description"
-    content="About Kerân Sam — an independent practice exploring images, drawing, painting, pattern, and other forms of making."
+    content="Artist Name — About."
   >
 
+  <meta name="author" content="Artist Name">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Use the exact URL of this About page -->
+  <link rel="canonical" href="https://www.yourwebsite.com/about.html">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f2ed">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Artist Name — About">
+  <meta
+    property="og:description"
+    content="Artist Name — About."
+  >
+  <meta property="og:url" content="https://www.yourwebsite.com/about.html">
+  <meta property="og:site_name" content="Artist Name">
+
+  <!-- Replace with your actual social preview image -->
+  <meta
+    property="og:image"
+    content="https://www.yourwebsite.com/images/og-image.jpg"
+  >
+  <meta
+    property="og:image:alt"
+    content="Artwork by Artist Name"
+  >
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artist Name — About">
+  <meta
+    name="twitter:description"
+    content="Artist Name — About."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.yourwebsite.com/images/og-image.jpg"
+  >
+  <meta
+    name="twitter:image:alt"
+    content="Artwork by Artist Name"
+  >
 
   <style>
     :root {
-      --black: #111111;
-      --muted: #666666;
-      --light: #888888;
-      --background: #ffffff;
+      --background: #f4f2ed;
+      --text: #171614;
+      --muted: #5f5c56;
+      --light: #8a867e;
+      --line: #d8d4cc;
+
+      --serif:
+        "Iowan Old Style",
+        "Baskerville",
+        "Times New Roman",
+        serif;
+
+      --sans:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
     }
 
     * {
@@ -28,74 +87,114 @@
 
     html {
       scroll-behavior: smooth;
+      background: var(--background);
     }
 
     body {
       min-height: 100vh;
       background: var(--background);
-      color: var(--black);
+      color: var(--text);
 
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      font-family: var(--sans);
       font-weight: 400;
+
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+      background: var(--text);
+      color: var(--background);
     }
 
     .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 42px 48px 28px;
+      padding: 34px 48px 26px;
     }
+
+    /* Header */
+
+    header {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+
+    .artist-name {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+
+      transition: opacity 180ms ease;
+    }
+
+    .artist-name:hover {
+      opacity: 0.55;
+    }
+
+    .header-label {
+      color: var(--light);
+      font-size: 12px;
+    }
+
+    /* Main */
 
     main {
       flex: 1;
+      width: 100%;
+
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .content {
       width: 100%;
-      max-width: 880px;
+      max-width: 960px;
+
       margin: 0 auto;
-      padding: 80px 0;
+
+      padding: 112px 0 120px;
     }
 
     /* Heading */
 
     h1 {
-      max-width: 800px;
-      margin-bottom: 48px;
+      margin-bottom: 72px;
 
-      font-size: clamp(56px, 7vw, 82px);
-      line-height: 0.98;
+      font-family: var(--serif);
+
+      font-size: clamp(64px, 9vw, 116px);
+      line-height: 0.88;
+
       font-weight: 400;
       letter-spacing: -0.055em;
 
-      color: var(--black);
+      color: var(--text);
     }
 
-    /* Main text */
+    /* About text */
 
     .about-text {
-      max-width: 650px;
+      max-width: 680px;
     }
 
     .about-text p {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
 
       font-size: 17px;
-      line-height: 1.72;
+      line-height: 1.76;
+
       font-weight: 400;
-      letter-spacing: -0.005em;
+      letter-spacing: -0.006em;
 
       color: var(--muted);
     }
@@ -104,138 +203,157 @@
       margin-bottom: 0;
     }
 
-    /* Closing statement */
-
-    .statement {
-      margin-top: 34px;
-      max-width: 520px;
-    }
-
-    .statement p {
-      margin-bottom: 4px;
-
-      font-size: clamp(16px, 1.4vw, 18px);
-      line-height: 1.45;
-      font-weight: 400;
-      letter-spacing: -0.012em;
-
-      color: var(--black);
-    }
-
-    .statement p:last-child {
-      margin-bottom: 0;
-    }
-
     /* Navigation */
 
     .links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin-top: 52px;
+      gap: 30px;
+
+      margin-top: 76px;
+      padding-top: 22px;
+
+      border-top: 1px solid var(--line);
     }
 
     .links a {
-      display: inline-block;
+      position: relative;
 
-      color: var(--black);
+      color: var(--text);
       text-decoration: none;
 
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.5;
+
       font-weight: 500;
       letter-spacing: -0.005em;
-
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 3px;
 
       transition: opacity 180ms ease;
     }
 
+    .links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -4px;
+
+      width: 100%;
+      height: 1px;
+
+      background: var(--text);
+
+      transform: scaleX(0);
+      transform-origin: right;
+
+      transition: transform 220ms ease;
+    }
+
     .links a:hover {
-      opacity: 0.5;
+      opacity: 0.65;
+    }
+
+    .links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     /* Footer */
 
     footer {
       width: 100%;
-      text-align: center;
 
-      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
 
-      font-size: 12px;
-      line-height: 1.5;
-      font-weight: 400;
-      letter-spacing: 0.01em;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--line);
 
       color: var(--light);
+
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: 0.005em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
     }
 
     footer a {
       color: var(--light);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
 
-      transition: opacity 180ms ease;
+      transition: color 180ms ease;
     }
 
     footer a:hover {
-      opacity: 0.5;
+      color: var(--text);
     }
 
     /* Mobile */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
       .page {
-        padding: 28px 24px 22px;
+        padding: 26px 24px 22px;
+      }
+
+      header {
+        font-size: 12px;
+      }
+
+      .header-label {
+        font-size: 11px;
       }
 
       .content {
-        padding: 60px 0;
+        padding: 76px 0 90px;
       }
 
       h1 {
-        margin-bottom: 36px;
+        margin-bottom: 48px;
 
-        font-size: clamp(48px, 14vw, 68px);
-        line-height: 1;
+        font-size: clamp(58px, 17vw, 82px);
+        line-height: 0.9;
+
         letter-spacing: -0.06em;
       }
 
+      .about-text {
+        max-width: 100%;
+      }
+
       .about-text p {
-        margin-bottom: 24px;
+        margin-bottom: 25px;
 
-        font-size: 15px;
-        line-height: 1.72;
-      }
+        font-size: 15.5px;
+        line-height: 1.75;
 
-      .statement {
-        margin-top: 26px;
-      }
-
-      .statement p {
-        font-size: 16px;
-        line-height: 1.45;
+        letter-spacing: -0.004em;
       }
 
       .links {
-        margin-top: 42px;
-        gap: 22px;
+        margin-top: 58px;
+        padding-top: 19px;
+
+        gap: 24px;
       }
 
       .links a {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       footer {
-        padding-top: 24px;
+        font-size: 10.5px;
       }
     }
 
-    /* Very small screens */
+    /* Small phones */
 
     @media (max-width: 380px) {
 
@@ -244,8 +362,28 @@
         padding-right: 20px;
       }
 
+      .content {
+        padding-top: 64px;
+      }
+
       h1 {
-        font-size: 46px;
+        font-size: 54px;
+      }
+    }
+
+    /* Reduced motion */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .artist-name,
+      .links a,
+      .links a::after,
+      footer a {
+        transition: none;
       }
     }
   </style>
@@ -255,60 +393,144 @@
 
   <div class="page">
 
-    <main>
-      <section class="content">
+    <header>
+      <a class="artist-name" href="index.html">
+        Artist Name
+      </a>
 
-        <h1>About</h1>
+      <span class="header-label">
+        About
+      </span>
+    </header>
+
+    <main>
+
+      <section class="content" aria-labelledby="about-title">
+
+        <h1 id="about-title">About</h1>
 
         <div class="about-text">
 
           <p>
-            I have always been drawn to images, objects, places, and the
-            details that can easily go unnoticed. Looking closely often
-            changes the way something feels, and sometimes becomes the
-            beginning of a new direction.
+            Born at the end of the second millennium, [Artist Name] entered
+            a world poised between eras, where one way of living was slowly
+            giving way to another. The familiar was still present, yet
+            beneath it, something was shifting—the ways we moved,
+            communicated, made things, and remembered.
           </p>
 
           <p>
-            My work moves between drawing, photography, painting, pattern,
-            and other forms of making. I like the freedom of moving between
-            them rather than being defined by one particular medium.
+            Raised at the threshold of the analog and digital age, the artist
+            grew up between a world of physical things and one where more and
+            more could exist without being held. The transition was gradual,
+            almost imperceptible, yet it altered how images, objects, and
+            experiences were encountered, kept, and passed on. What once had
+            a physical place in the world could increasingly exist
+            elsewhere—in screens, files, and spaces that could not be touched.
           </p>
 
           <p>
-            A photograph, a line, a colour, a surface, or something found
-            can all become a starting point. From there, I tend to work
-            intuitively, allowing things to change through repetition,
-            editing, combination, and simply trying something different.
+            As the new millennium unfolded, technology became woven more
+            deeply into everyday life. Images, music, writing, and ideas could
+            be produced, shared, and encountered with an immediacy that had
+            not been possible before. The distance between making something
+            and sharing it with the world began to disappear. Yet the physical
+            remained close: photographs developed and kept, music collected
+            over years, books marked by use, objects repaired rather than
+            replaced. They gathered traces of touch, familiarity, attachment,
+            and time.
           </p>
 
           <p>
-            Sometimes an idea arrives clearly; other times it reveals itself
-            through the work. I follow those changes rather than trying to
-            decide too early what something should become, allowing the
-            image, mark, colour, or material to take its own direction.
+            It is within this landscape that [Artist Name] developed a
+            particular sensitivity to images, objects, places, and details
+            that might otherwise go unnoticed. Looking closely can alter the
+            way something is felt. A surface, a shadow, a colour, a line, or
+            an incidental detail can hold attention and lead somewhere
+            unexpected. Photographing, drawing, documenting, collecting,
+            and archiving become ways of staying with those discoveries—of
+            giving them time to reveal what they might contain.
           </p>
 
-        </div>
+          <p>
+            Over the following years, a different rhythm emerged. New
+            versions arrived faster, images and music increasingly existed
+            without a physical form, and objects could be replaced long
+            before their material life had run its course. What had once been
+            repaired, collected, and carried forward increasingly belonged to
+            a culture of updating, circulation, and obsolescence. Our sense
+            of permanence had begun to change.
+          </p>
 
-        <div class="statement">
-          <p>Look closely.</p>
-          <p>Stay curious.</p>
+          <p>
+            The work moves between drawing, photography, painting, pattern,
+            and other forms of making, following what each idea seems to
+            require. A pencil line, a painted surface, a mark, a colour, a
+            photograph, or something found can become a starting point. One
+            form can lead into another: a photograph might become a colour or
+            structure; a line might suggest an image; a found element might
+            be altered until its original context begins to recede. The
+            medium is not predetermined so much as discovered along the way.
+          </p>
+
+          <p>
+            The process develops through repetition, editing, layering,
+            combination, and experimentation. A gesture may be kept because
+            something in it feels unresolved; a form may be repeated until
+            it begins to shift; an image may be altered without knowing
+            exactly what is being sought. Documentation and archiving become
+            part of this process, not simply as records, but as material that
+            can be returned to, reworked, and seen differently over time.
+          </p>
+
+          <p>
+            Sometimes an idea arrives clearly; at other times, it reveals
+            itself only through making. Experimentation becomes a way of
+            discovering what has not yet found its language. A mark can be
+            followed before it is understood, and a decision made without
+            knowing where it will lead. What begins intuitively can gradually
+            take shape as an image, a feeling, or an idea. Uncertainty is not
+            something to resolve, but part of what allows the work to
+            develop.
+          </p>
+
+          <p>
+            What remains is rarely untouched. Time leaves its presence in
+            worn surfaces, faded images, altered forms, and the marks of what
+            they have passed through. A familiar object or image can hold
+            something that cannot quite be recovered, only sensed. Returning
+            to these remnants does not restore the past; it changes the way
+            it can be seen. Memory moves between what was, what is remembered,
+            and what might still be imagined.
+          </p>
+
+          <p>
+            At the centre of the work is an attention to what catches, what
+            lingers, and what might otherwise disappear. Things are gathered,
+            documented, and revisited, not to fix them in place, but to leave
+            them open to new readings. Making becomes another form of
+            keeping—not preserving something exactly as it was, but allowing
+            it to remain long enough to change.
+          </p>
+
         </div>
 
         <nav class="links" aria-label="Main navigation">
-          <a href="make.html">Make</a>
+          <a href="index.html">Home</a>
           <a href="process.html">Process</a>
-          <a href="mailto:make@keransam.com">Get in touch</a>
         </nav>
 
       </section>
+
     </main>
 
     <footer>
-      Making Ideas © Kerân Sam 2025-2026 ·
-      <a href="art-privacy.html">Privacy</a> ·
-      <a href="art-terms.html">Terms</a>
+      <span>Artist Name © 2026</span>
+
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
     </footer>
 
   </div>
