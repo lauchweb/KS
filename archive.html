@@ -58,7 +58,6 @@
       --black: #111111;
       --light: #888888;
       --background: #ffffff;
-      --image-background: #f4f4f4;
     }
 
     *,
@@ -97,6 +96,11 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     ::selection {
       background: var(--black);
       color: var(--background);
@@ -117,13 +121,13 @@
 
     .archive {
       width: 100%;
-      max-width: 880px;
+      max-width: 1100px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      padding: 60px 0;
+      padding: 60px 0 110px;
     }
 
     .name {
@@ -136,33 +140,34 @@
       letter-spacing: -0.005em;
     }
 
-    .archive-title {
-      margin-top: 70px;
+    /*
+      FICTIVE GRID
 
-      color: var(--black);
+      The grid exists only as an invisible structure.
+      There are no borders, boxes, or visible lines.
 
-      font-size: 14px;
-      line-height: 1.5;
-      font-weight: 500;
-      letter-spacing: -0.005em;
-
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 3px;
-    }
+      Every position contains a work.
+      The breathing comes from the space between works.
+    */
 
     .archive-grid {
       width: 100%;
 
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      gap: 70px 30px;
+      column-gap: 72px;
+      row-gap: 120px;
 
-      margin-top: 70px;
+      margin-top: 120px;
+
+      align-items: start;
     }
 
     .archive-item {
       display: block;
+
+      width: 100%;
 
       text-decoration: none;
 
@@ -173,17 +178,18 @@
       opacity: 0.5;
     }
 
+    /*
+      Preserve the natural proportions of each work.
+      Nothing is cropped into a common format.
+    */
+
     .archive-image {
       display: block;
 
       width: 100%;
       height: auto;
 
-      aspect-ratio: 4 / 5;
-
-      object-fit: cover;
-
-      background: var(--image-background);
+      object-fit: contain;
     }
 
     .archive-item:focus-visible,
@@ -200,7 +206,7 @@
       justify-content: center;
       gap: 34px;
 
-      margin-top: 72px;
+      margin-top: 150px;
     }
 
     .section-link {
@@ -247,33 +253,51 @@
       opacity: 0.5;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
+
+      .page {
+        padding: 32px 28px 24px;
+      }
+
+      .archive {
+        max-width: 100%;
+        padding: 50px 0 80px;
+      }
+
+      .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 40px;
+        row-gap: 80px;
+
+        margin-top: 90px;
+      }
+
+      .links {
+        margin-top: 110px;
+      }
+    }
+
+    @media (max-width: 600px) {
 
       .page {
         padding: 28px 24px 22px;
       }
 
       .archive {
-        max-width: 100%;
-        padding: 40px 0;
-      }
-
-      .archive-title {
-        margin-top: 40px;
-        font-size: 13px;
+        padding: 40px 0 60px;
       }
 
       .archive-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-gap: 22px;
+        row-gap: 58px;
 
-        gap: 40px 20px;
-
-        margin-top: 40px;
+        margin-top: 70px;
       }
 
       .links {
         gap: 22px;
-        margin-top: 58px;
+        margin-top: 85px;
       }
 
       .section-link {
@@ -292,14 +316,11 @@
         padding-right: 20px;
       }
 
-      .archive-title {
-        margin-top: 28px;
-        font-size: 12px;
-      }
-
       .archive-grid {
-        gap: 28px 14px;
-        margin-top: 28px;
+        column-gap: 16px;
+        row-gap: 48px;
+
+        margin-top: 60px;
       }
 
       .links {
@@ -342,10 +363,6 @@
           P
         </a>
 
-        <h1 class="archive-title">
-          Archive
-        </h1>
-
         <div class="archive-grid">
 
           <a
@@ -357,9 +374,9 @@
               class="archive-image"
               src="/archive-01.jpg"
               alt=""
-              width="300"
-              height="375"
-              loading="lazy"
+              width="1200"
+              height="1500"
+              loading="eager"
               decoding="async"
             >
           </a>
@@ -373,11 +390,10 @@
               class="archive-image"
               src="/archive-02.jpg"
               alt=""
-              width="300"
-              height="375"
+              width="1200"
+              height="1500"
               loading="lazy"
               decoding="async"
-            >
           </a>
 
           <a
@@ -389,8 +405,8 @@
               class="archive-image"
               src="/archive-03.jpg"
               alt=""
-              width="300"
-              height="375"
+              width="1200"
+              height="1500"
               loading="lazy"
               decoding="async"
             >
@@ -405,8 +421,8 @@
               class="archive-image"
               src="/archive-04.jpg"
               alt=""
-              width="300"
-              height="375"
+              width="1200"
+              height="1500"
               loading="lazy"
               decoding="async"
             >
@@ -421,8 +437,8 @@
               class="archive-image"
               src="/archive-05.jpg"
               alt=""
-              width="300"
-              height="375"
+              width="1200"
+              height="1500"
               loading="lazy"
               decoding="async"
             >
@@ -437,8 +453,8 @@
               class="archive-image"
               src="/archive-06.jpg"
               alt=""
-              width="300"
-              height="375"
+              width="1200"
+              height="1500"
               loading="lazy"
               decoding="async"
             >
