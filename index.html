@@ -35,23 +35,36 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="P">
+
   <meta
     property="og:description"
     content="P — an independent creative practice exploring images, objects, memory, time, and the details of everyday life."
   >
+
   <meta property="og:url" content="https://www.yourwebsite.com/">
   <meta property="og:site_name" content="P">
-  <meta property="og:image" content="https://www.yourwebsite.com/home-image.jpg">
+
+  <meta
+    property="og:image"
+    content="https://www.yourwebsite.com/home-image.jpg"
+  >
+
   <meta property="og:image:alt" content="P">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="P">
+
   <meta
     name="twitter:description"
     content="P — an independent creative practice exploring images, objects, memory, time, and the details of everyday life."
   >
-  <meta name="twitter:image" content="https://www.yourwebsite.com/home-image.jpg">
+
+  <meta
+    name="twitter:image"
+    content="https://www.yourwebsite.com/home-image.jpg"
+  >
+
   <meta name="twitter:image:alt" content="P">
 
   <style>
@@ -72,10 +85,12 @@
 
     html {
       scroll-behavior: smooth;
+      background: var(--background);
     }
 
     body {
       min-height: 100vh;
+
       background: var(--background);
       color: var(--black);
 
@@ -88,8 +103,10 @@
         sans-serif;
 
       font-weight: 400;
+
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
       text-rendering: optimizeLegibility;
     }
 
@@ -97,15 +114,28 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--black);
+      color: var(--background);
+    }
+
     .page {
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
+
       padding: 42px 48px 28px;
     }
 
     main {
       flex: 1;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -122,18 +152,42 @@
       padding: 60px 0;
     }
 
+    /*
+      Identity
+
+      Kept centered above the composition.
+      Slightly larger and more defined than
+      the smaller internal page identity marks.
+    */
+
     .name {
       color: var(--black);
       text-decoration: none;
 
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1;
       font-weight: 500;
-      letter-spacing: -0.005em;
+      letter-spacing: -0.035em;
+
+      transition: opacity 180ms ease;
     }
+
+    .name:hover {
+      opacity: 0.5;
+    }
+
+    /*
+      Main composition
+
+      About — image — Process
+
+      Archive sits above the image.
+      Practice sits below the image.
+    */
 
     .composition {
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -148,6 +202,10 @@
       flex-direction: column;
       align-items: center;
     }
+
+    /*
+      Archive
+    */
 
     .archive-link {
       color: var(--black);
@@ -170,6 +228,13 @@
       opacity: 0.5;
     }
 
+    /*
+      Central image
+
+      Natural visual proportion is retained
+      through the fixed 4:5 composition.
+    */
+
     .image {
       display: block;
 
@@ -182,6 +247,10 @@
 
       background: var(--image-background);
     }
+
+    /*
+      Practice
+    */
 
     .practice-link {
       color: var(--black);
@@ -204,6 +273,10 @@
       opacity: 0.5;
     }
 
+    /*
+      Side navigation
+    */
+
     .section-link {
       color: var(--black);
       text-decoration: none;
@@ -223,6 +296,10 @@
       opacity: 0.5;
     }
 
+    /*
+      Accessibility
+    */
+
     .name:focus-visible,
     .section-link:focus-visible,
     .archive-link:focus-visible,
@@ -232,18 +309,23 @@
       outline-offset: 4px;
     }
 
+    /*
+      Footer
+    */
+
     footer {
       width: 100%;
+
       text-align: center;
 
       padding-top: 30px;
+
+      color: var(--light);
 
       font-size: 12px;
       line-height: 1.5;
       font-weight: 400;
       letter-spacing: 0.01em;
-
-      color: var(--light);
     }
 
     footer a {
@@ -257,6 +339,34 @@
       opacity: 0.5;
     }
 
+    /*
+      Tablet
+    */
+
+    @media (max-width: 900px) {
+
+      .page {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .home {
+        max-width: 100%;
+      }
+
+      .composition {
+        gap: 52px;
+      }
+
+      .image {
+        width: min(280px, 42vw);
+      }
+    }
+
+    /*
+      Mobile
+    */
+
     @media (max-width: 600px) {
 
       .page {
@@ -265,6 +375,10 @@
 
       .home {
         padding: 40px 0;
+      }
+
+      .name {
+        font-size: 16px;
       }
 
       .composition {
@@ -294,6 +408,10 @@
         padding-top: 24px;
       }
     }
+
+    /*
+      Small mobile
+    */
 
     @media (max-width: 380px) {
 
@@ -326,6 +444,10 @@
       }
     }
 
+    /*
+      Reduced motion
+    */
+
     @media (prefers-reduced-motion: reduce) {
 
       html {
@@ -335,9 +457,7 @@
       *,
       *::before,
       *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        transition: none !important;
       }
     }
   </style>
@@ -349,7 +469,10 @@
 
     <main>
 
-      <section class="home" aria-label="P">
+      <section
+        class="home"
+        aria-label="P"
+      >
 
         <a
           class="name"
@@ -413,11 +536,18 @@
     </main>
 
     <footer>
+
       <p>
         P © 2025–2026 ·
-        <a href="/privacy.html">Privacy</a> ·
-        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">
+          Privacy
+        </a>
+        ·
+        <a href="/terms.html">
+          Terms
+        </a>
       </p>
+
     </footer>
 
   </div>
