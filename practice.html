@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="An independent artistic practice exploring images, objects, memory, time, and the meanings that gather around everyday things."
+    content="A current body of work by P, exploring images, objects, memory, time, and the meanings that gather around everyday things."
   >
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,10 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
 
-  <link rel="canonical" href="https://www.yourwebsite.com/practice.html">
+  <link
+    rel="canonical"
+    href="https://www.yourwebsite.com/practice.html"
+  >
 
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -35,22 +38,26 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Practice - P">
+
   <meta
     property="og:description"
-    content="An independent artistic practice exploring images, objects, memory, time, and the meanings that gather around everyday things."
+    content="A current body of work by P, exploring images, objects, memory, time, and the meanings that gather around everyday things."
   >
+
   <meta
     property="og:url"
     content="https://www.yourwebsite.com/practice.html"
   >
+
   <meta property="og:site_name" content="P">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Practice - P">
+
   <meta
     name="twitter:description"
-    content="An independent artistic practice exploring images, objects, memory, time, and the meanings that gather around everyday things."
+    content="A current body of work by P, exploring images, objects, memory, time, and the meanings that gather around everyday things."
   >
 
   <style>
@@ -75,6 +82,7 @@
 
     body {
       min-height: 100vh;
+
       background: var(--background);
       color: var(--black);
 
@@ -87,8 +95,10 @@
         sans-serif;
 
       font-weight: 400;
+
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
       text-rendering: optimizeLegibility;
     }
 
@@ -108,59 +118,59 @@
 
     .page {
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
+
       padding: 42px 48px 28px;
     }
 
     main {
       flex: 1;
+
       display: flex;
       justify-content: center;
     }
 
     .practice {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      padding: 60px 0 100px;
+      padding: 60px 0 110px;
     }
 
     /*
-      The text remains deliberately short.
-      The work is the main body of the page.
+      Identity
+
+      The page does not need a visible "Practice" heading.
+      The work is the content of the page.
     */
 
-    .practice-text {
-      width: 100%;
-      max-width: 680px;
-      margin-bottom: 120px;
-    }
-
-    .practice-text p {
-      margin-bottom: 30px;
-
+    .name {
       color: var(--black);
+      text-decoration: none;
 
       font-size: 14px;
-      line-height: 1.7;
-      font-weight: 400;
+      line-height: 1.5;
+      font-weight: 500;
       letter-spacing: -0.005em;
-    }
-
-    .practice-text p:last-child {
-      margin-bottom: 0;
     }
 
     /*
       FICTIVE GRID
 
-      No borders or visible grid lines.
-      Every position contains a work.
+      This is the same structural idea as the Archive page.
+
+      No borders.
+      No visible lines.
+      No boxes.
+
+      Every grid position contains an actual work.
+
       The space between works creates the breathing room.
     */
 
@@ -168,10 +178,14 @@
       width: 100%;
 
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      column-gap: 72px;
-      row-gap: 120px;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      column-gap: 42px;
+      row-gap: 90px;
+
+      margin-top: 120px;
 
       align-items: start;
     }
@@ -181,20 +195,31 @@
     }
 
     .work img {
+      display: block;
+
       width: 100%;
       height: auto;
+
       object-fit: contain;
     }
 
     /*
-      Keep the works quiet.
-      No captions unless they become necessary later.
+      No captions for now.
+
+      The works should be encountered without explanation.
+      Individual work pages can carry titles, dates,
+      materials, or other information when necessary.
+    */
+
+    /*
+      Navigation
     */
 
     .links {
       display: flex;
       align-items: center;
       justify-content: center;
+
       gap: 34px;
 
       margin-top: 150px;
@@ -219,14 +244,24 @@
       opacity: 0.5;
     }
 
+    /*
+      Accessibility
+    */
+
+    .name:focus-visible,
     .section-link:focus-visible,
     footer a:focus-visible {
       outline: 2px solid var(--black);
       outline-offset: 4px;
     }
 
+    /*
+      Footer
+    */
+
     footer {
       width: 100%;
+
       text-align: center;
 
       padding-top: 30px;
@@ -250,32 +285,35 @@
       opacity: 0.5;
     }
 
-    @media (max-width: 800px) {
+    /*
+      Tablet
+    */
+
+    @media (max-width: 900px) {
 
       .page {
-        padding: 32px 28px 24px;
+        padding-left: 36px;
+        padding-right: 36px;
       }
 
       .practice {
         max-width: 100%;
-        padding: 50px 0 80px;
-      }
-
-      .practice-text {
-        margin-bottom: 90px;
       }
 
       .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
 
-        column-gap: 40px;
-        row-gap: 80px;
-      }
+        column-gap: 32px;
+        row-gap: 70px;
 
-      .links {
-        margin-top: 110px;
+        margin-top: 90px;
       }
     }
+
+    /*
+      Mobile
+    */
 
     @media (max-width: 600px) {
 
@@ -287,24 +325,23 @@
         padding: 40px 0 60px;
       }
 
-      .practice-text {
-        margin-bottom: 70px;
-      }
-
-      .practice-text p {
-        margin-bottom: 25px;
-
+      .name {
         font-size: 13px;
-        line-height: 1.7;
       }
 
       .work-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
         column-gap: 22px;
         row-gap: 58px;
+
+        margin-top: 70px;
       }
 
       .links {
         gap: 22px;
+
         margin-top: 85px;
       }
 
@@ -317,6 +354,10 @@
       }
     }
 
+    /*
+      Small mobile
+    */
+
     @media (max-width: 380px) {
 
       .page {
@@ -324,13 +365,11 @@
         padding-right: 20px;
       }
 
-      .practice-text p {
-        font-size: 12px;
-      }
-
       .work-grid {
         column-gap: 16px;
         row-gap: 48px;
+
+        margin-top: 60px;
       }
 
       .links {
@@ -341,6 +380,10 @@
         font-size: 12px;
       }
     }
+
+    /*
+      Reduced motion
+    */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -365,47 +408,36 @@
 
       <article class="practice">
 
-        <div class="practice-text">
+        <a
+          class="name"
+          href="/"
+          aria-label="P"
+        >
+          P
+        </a>
 
-          <p>
-            The practice is concerned with looking closely at the things
-            that surround us: images, objects, places, surfaces, gestures,
-            and details that might otherwise pass unnoticed.
-          </p>
-
-          <p>
-            Everyday things often carry more than their immediate function.
-            They accumulate traces of use, attachment, memory, and time.
-            A photograph, an object, a fragment, or a familiar image can
-            become a way into something less tangible — a feeling, a memory,
-            or a question without a fixed answer.
-          </p>
-
-          <p>
-            The work often begins with this kind of attention. Something
-            catches, lingers, or creates a sense of recognition. Images and
-            materials are gathered, altered, combined, and revisited.
-            Photographs, drawings, paintings, patterns, found elements,
-            and collected material can move between different states.
-          </p>
-
-        </div>
 
         <!--
           CURRENT BODY OF WORK
 
-          The grid is invisible.
-          Every grid position contains a work.
-          Replace the filenames below with your actual images.
+          Invisible 4-column grid on desktop.
+          Invisible 3-column grid on tablet.
+          Invisible 2-column grid on mobile.
+
+          Every position contains an actual work.
         -->
 
-        <section class="work-grid" aria-label="Current work">
+        <section
+          class="work-grid"
+          aria-label="Current work"
+        >
 
           <figure class="work">
             <img
               src="/images/work-01.jpg"
               alt="Current work"
               loading="eager"
+              decoding="async"
             >
           </figure>
 
@@ -414,6 +446,7 @@
               src="/images/work-02.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -422,6 +455,7 @@
               src="/images/work-03.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -430,6 +464,7 @@
               src="/images/work-04.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -438,6 +473,7 @@
               src="/images/work-05.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -446,6 +482,7 @@
               src="/images/work-06.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -454,6 +491,7 @@
               src="/images/work-07.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -462,6 +500,7 @@
               src="/images/work-08.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
             >
           </figure>
 
@@ -470,12 +509,44 @@
               src="/images/work-09.jpg"
               alt="Current work"
               loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-10.jpg"
+              alt="Current work"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-11.jpg"
+              alt="Current work"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-12.jpg"
+              alt="Current work"
+              loading="lazy"
+              decoding="async"
             >
           </figure>
 
         </section>
 
-        <nav class="links" aria-label="Main navigation">
+
+        <nav
+          class="links"
+          aria-label="Main navigation"
+        >
 
           <a
             class="section-link"
@@ -504,10 +575,20 @@
 
     </main>
 
+
     <footer>
-      P © 2025–2026 ·
-      <a href="/privacy.html">Privacy</a> ·
-      <a href="/terms.html">Terms</a>
+
+      <p>
+        P © 2025–2026 ·
+        <a href="/privacy.html">
+          Privacy
+        </a>
+        ·
+        <a href="/terms.html">
+          Terms
+        </a>
+      </p>
+
     </footer>
 
   </div>
