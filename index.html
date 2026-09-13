@@ -140,7 +140,7 @@
       gap: 70px;
 
       margin-top: 100px;
-      margin-bottom: 72px;
+      margin-bottom: 0;
     }
 
     .image {
@@ -154,6 +154,33 @@
       object-fit: cover;
 
       background: var(--image-background);
+    }
+
+    .image-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .practice-link {
+      color: var(--black);
+      text-decoration: none;
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 3px;
+
+      margin-top: 70px;
+
+      transition: opacity 180ms ease;
+    }
+
+    .practice-link:hover {
+      opacity: 0.5;
     }
 
     .section-link {
@@ -177,6 +204,7 @@
 
     .name:focus-visible,
     .section-link:focus-visible,
+    .practice-link:focus-visible,
     footer a:focus-visible {
       outline: 2px solid var(--black);
       outline-offset: 4px;
@@ -220,11 +248,15 @@
       .composition {
         gap: 40px;
         margin-top: 76px;
-        margin-bottom: 58px;
       }
 
       .image {
         width: min(230px, 56vw);
+      }
+
+      .practice-link {
+        margin-top: 40px;
+        font-size: 13px;
       }
 
       .section-link {
@@ -249,6 +281,11 @@
 
       .image {
         width: 54vw;
+      }
+
+      .practice-link {
+        margin-top: 28px;
+        font-size: 12px;
       }
 
       .section-link {
@@ -301,15 +338,26 @@
             About
           </a>
 
-          <img
-            class="image"
-            src="/home-image.jpg"
-            alt=""
-            width="300"
-            height="375"
-            fetchpriority="high"
-            decoding="async"
-          >
+          <div class="image-column">
+
+            <img
+              class="image"
+              src="/home-image.jpg"
+              alt=""
+              width="300"
+              height="375"
+              fetchpriority="high"
+              decoding="async"
+            >
+
+            <a
+              class="practice-link"
+              href="/practice.html"
+            >
+              Practice
+            </a>
+
+          </div>
 
           <a
             class="section-link"
