@@ -144,10 +144,7 @@
     }
 
     /*
-      Small identity mark.
-
-      No visible "Archive" heading.
-      The works are the archive.
+      Identity
     */
 
     .name {
@@ -161,21 +158,20 @@
     }
 
     /*
-      FICTIVE GRID
+      INVISIBLE FICTIVE GRID
 
-      The grid is structural but invisible.
+      The grid exists only as a structure.
 
-      Desktop: 4 positions across.
-      Tablet: 3 positions across.
-      Mobile: 2 positions across.
+      Desktop: 4 positions
+      Tablet: 3 positions
+      Mobile: 2 positions
 
-      Every position contains an actual work.
+      There are NO borders.
+      There are NO boxes.
+      There are NO backgrounds.
 
-      There are no borders or visible grid lines.
-
-      The fixed height of each position makes
-      the underlying grid perceptible without
-      turning it into a visible gallery system.
+      The artworks themselves are visible.
+      Each artwork keeps its natural proportions.
     */
 
     .archive-grid {
@@ -194,14 +190,18 @@
       align-items: start;
     }
 
-    .archive-item {
-      display: flex;
+    /*
+      Each artwork simply occupies one grid position.
 
-      align-items: flex-start;
-      justify-content: center;
+      No fixed image ratio.
+      No cropping.
+      No stretching.
+    */
+
+    .archive-item {
+      display: block;
 
       width: 100%;
-      height: 360px;
 
       text-decoration: none;
 
@@ -212,21 +212,11 @@
       opacity: 0.5;
     }
 
-    /*
-      The artwork keeps its own proportions.
-
-      Nothing is cropped.
-      Nothing is stretched.
-
-      The image sits inside its invisible
-      grid position.
-    */
-
     .archive-image {
       display: block;
 
       width: 100%;
-      height: 100%;
+      height: auto;
 
       object-fit: contain;
     }
@@ -249,6 +239,7 @@
 
     .links {
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -330,10 +321,6 @@
 
         margin-top: 90px;
       }
-
-      .archive-item {
-        height: 300px;
-      }
     }
 
     /*
@@ -362,10 +349,6 @@
         row-gap: 58px;
 
         margin-top: 70px;
-      }
-
-      .archive-item {
-        height: 250px;
       }
 
       .links {
@@ -399,10 +382,6 @@
         row-gap: 48px;
 
         margin-top: 60px;
-      }
-
-      .archive-item {
-        height: 210px;
       }
 
       .links {
@@ -453,14 +432,12 @@
         </a>
 
         <!--
-          INVISIBLE FICTIVE GRID
+          ARCHIVE
 
-          Every position contains a work.
-          The positions themselves are not drawn.
+          Invisible fictive grid.
 
-          Desktop: 4 columns
-          Tablet: 3 columns
-          Mobile: 2 columns
+          Every artwork occupies one grid position.
+          The grid lines themselves are never shown.
         -->
 
         <div class="archive-grid">
@@ -634,6 +611,11 @@
           </a>
 
         </div>
+
+        <!--
+          Navigation
+          Living Room intentionally removed.
+        -->
 
         <nav
           class="links"
