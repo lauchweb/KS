@@ -27,7 +27,10 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
 
-  <link rel="canonical" href="https://www.yourwebsite.com/archive.html">
+  <link
+    rel="canonical"
+    href="https://www.yourwebsite.com/archive.html"
+  >
 
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -35,19 +38,23 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Archive - P">
+
   <meta
     property="og:description"
     content="An archive of images, objects, studies, and fragments gathered over time, reflecting an ongoing creative practice."
   >
+
   <meta
     property="og:url"
     content="https://www.yourwebsite.com/archive.html"
   >
+
   <meta property="og:site_name" content="P">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Archive - P">
+
   <meta
     name="twitter:description"
     content="An archive of images, objects, studies, and fragments gathered over time, reflecting an ongoing creative practice."
@@ -75,6 +82,7 @@
 
     body {
       min-height: 100vh;
+
       background: var(--background);
       color: var(--black);
 
@@ -87,8 +95,10 @@
         sans-serif;
 
       font-weight: 400;
+
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
       text-rendering: optimizeLegibility;
     }
 
@@ -108,20 +118,23 @@
 
     .page {
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
+
       padding: 42px 48px 28px;
     }
 
     main {
       flex: 1;
+
       display: flex;
       justify-content: center;
     }
 
     .archive {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
 
       display: flex;
       flex-direction: column;
@@ -129,6 +142,11 @@
 
       padding: 60px 0 110px;
     }
+
+    /*
+      Small identity mark.
+      No visible "Archive" heading.
+    */
 
     .name {
       color: var(--black);
@@ -143,21 +161,28 @@
     /*
       FICTIVE GRID
 
-      The grid exists only as an invisible structure.
-      There are no borders, boxes, or visible lines.
+      The grid is invisible.
+
+      There are no borders,
+      boxes,
+      or visible lines.
 
       Every position contains a work.
-      The breathing comes from the space between works.
+
+      The space between works creates
+      the breathing room.
     */
 
     .archive-grid {
       width: 100%;
 
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      column-gap: 72px;
-      row-gap: 120px;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      column-gap: 42px;
+      row-gap: 90px;
 
       margin-top: 120px;
 
@@ -179,8 +204,10 @@
     }
 
     /*
-      Preserve the natural proportions of each work.
-      Nothing is cropped into a common format.
+      Natural image proportions.
+
+      Nothing is cropped into a fixed ratio.
+      Each work keeps its own shape.
     */
 
     .archive-image {
@@ -192,6 +219,10 @@
       object-fit: contain;
     }
 
+    /*
+      Accessibility
+    */
+
     .archive-item:focus-visible,
     .name:focus-visible,
     .section-link:focus-visible,
@@ -200,10 +231,15 @@
       outline-offset: 4px;
     }
 
+    /*
+      Navigation
+    */
+
     .links {
       display: flex;
       align-items: center;
       justify-content: center;
+
       gap: 34px;
 
       margin-top: 150px;
@@ -228,8 +264,13 @@
       opacity: 0.5;
     }
 
+    /*
+      Footer
+    */
+
     footer {
       width: 100%;
+
       text-align: center;
 
       padding-top: 30px;
@@ -253,30 +294,35 @@
       opacity: 0.5;
     }
 
-    @media (max-width: 800px) {
+    /*
+      Tablet
+    */
+
+    @media (max-width: 900px) {
 
       .page {
-        padding: 32px 28px 24px;
+        padding-left: 36px;
+        padding-right: 36px;
       }
 
       .archive {
         max-width: 100%;
-        padding: 50px 0 80px;
       }
 
       .archive-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
 
-        column-gap: 40px;
-        row-gap: 80px;
+        column-gap: 32px;
+        row-gap: 70px;
 
         margin-top: 90px;
       }
-
-      .links {
-        margin-top: 110px;
-      }
     }
+
+    /*
+      Mobile
+    */
 
     @media (max-width: 600px) {
 
@@ -288,7 +334,14 @@
         padding: 40px 0 60px;
       }
 
+      .name {
+        font-size: 13px;
+      }
+
       .archive-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
         column-gap: 22px;
         row-gap: 58px;
 
@@ -297,6 +350,7 @@
 
       .links {
         gap: 22px;
+
         margin-top: 85px;
       }
 
@@ -308,6 +362,10 @@
         padding-top: 24px;
       }
     }
+
+    /*
+      Small mobile
+    */
 
     @media (max-width: 380px) {
 
@@ -332,6 +390,10 @@
       }
     }
 
+    /*
+      Reduced motion
+    */
+
     @media (prefers-reduced-motion: reduce) {
 
       html {
@@ -353,7 +415,10 @@
 
     <main>
 
-      <section class="archive" aria-label="Archive">
+      <section
+        class="archive"
+        aria-label="Archive"
+      >
 
         <a
           class="name"
@@ -362,6 +427,18 @@
         >
           P
         </a>
+
+
+        <!--
+          ARCHIVE WORKS
+
+          Invisible 4-column grid on desktop.
+          Invisible 3-column grid on tablet.
+          Invisible 2-column grid on mobile.
+
+          Every position contains a work.
+          No visible grid lines.
+        -->
 
         <div class="archive-grid">
 
@@ -374,12 +451,11 @@
               class="archive-image"
               src="/archive-01.jpg"
               alt=""
-              width="1200"
-              height="1500"
               loading="eager"
               decoding="async"
             >
           </a>
+
 
           <a
             class="archive-item"
@@ -390,11 +466,11 @@
               class="archive-image"
               src="/archive-02.jpg"
               alt=""
-              width="1200"
-              height="1500"
               loading="lazy"
               decoding="async"
+            >
           </a>
+
 
           <a
             class="archive-item"
@@ -405,12 +481,11 @@
               class="archive-image"
               src="/archive-03.jpg"
               alt=""
-              width="1200"
-              height="1500"
               loading="lazy"
               decoding="async"
             >
           </a>
+
 
           <a
             class="archive-item"
@@ -421,12 +496,11 @@
               class="archive-image"
               src="/archive-04.jpg"
               alt=""
-              width="1200"
-              height="1500"
               loading="lazy"
               decoding="async"
             >
           </a>
+
 
           <a
             class="archive-item"
@@ -437,12 +511,11 @@
               class="archive-image"
               src="/archive-05.jpg"
               alt=""
-              width="1200"
-              height="1500"
               loading="lazy"
               decoding="async"
             >
           </a>
+
 
           <a
             class="archive-item"
@@ -453,8 +526,96 @@
               class="archive-image"
               src="/archive-06.jpg"
               alt=""
-              width="1200"
-              height="1500"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-07.html"
+            aria-label="Archive item 07"
+          >
+            <img
+              class="archive-image"
+              src="/archive-07.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-08.html"
+            aria-label="Archive item 08"
+          >
+            <img
+              class="archive-image"
+              src="/archive-08.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-09.html"
+            aria-label="Archive item 09"
+          >
+            <img
+              class="archive-image"
+              src="/archive-09.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-10.html"
+            aria-label="Archive item 10"
+          >
+            <img
+              class="archive-image"
+              src="/archive-10.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-11.html"
+            aria-label="Archive item 11"
+          >
+            <img
+              class="archive-image"
+              src="/archive-11.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+
+          <a
+            class="archive-item"
+            href="/work-12.html"
+            aria-label="Archive item 12"
+          >
+            <img
+              class="archive-image"
+              src="/archive-12.jpg"
+              alt=""
               loading="lazy"
               decoding="async"
             >
@@ -462,7 +623,16 @@
 
         </div>
 
-        <nav class="links" aria-label="Main navigation">
+
+        <!--
+          Navigation
+          Living Room is intentionally absent.
+        -->
+
+        <nav
+          class="links"
+          aria-label="Main navigation"
+        >
 
           <a
             class="section-link"
@@ -498,12 +668,20 @@
 
     </main>
 
+
     <footer>
+
       <p>
         P © 2025–2026 ·
-        <a href="/privacy.html">Privacy</a> ·
-        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">
+          Privacy
+        </a>
+        ·
+        <a href="/terms.html">
+          Terms
+        </a>
       </p>
+
     </footer>
 
   </div>
