@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="A collection of images, objects, studies, and fragments reflecting an ongoing creative practice by P."
+    content="A collection of images, objects, studies, and fragments reflecting P's creative practice."
   >
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
 
   <meta
     property="og:description"
-    content="A collection of images, objects, studies, and fragments reflecting an ongoing creative practice by P."
+    content="A collection of images, objects, studies, and fragments reflecting P's creative practice."
   >
 
   <meta
@@ -57,10 +57,614 @@
 
   <meta
     name="twitter:description"
-    content="A collection of images, objects, studies, and fragments reflecting an ongoing creative practice by P."
+    content="A collection of images, objects, studies, and fragments reflecting P's creative practice."
   >
 
   <style>
-    /* Keep the CSS exactly as in the version above. */
+    :root {
+      --black: #111111;
+      --light: #888888;
+      --background: #ffffff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--background);
+    }
+
+    body {
+      min-height: 100vh;
+
+      background: var(--background);
+      color: var(--black);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-weight: 400;
+
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--black);
+      color: var(--background);
+    }
+
+    .page {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 42px 48px 28px;
+    }
+
+    main {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    .practice {
+      width: 100%;
+      max-width: 1180px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 60px 0 110px;
+    }
+
+    /*
+      Identity
+    */
+
+    .name {
+      color: var(--black);
+      text-decoration: none;
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+
+    /*
+      INVISIBLE FICTIVE GRID
+
+      Same structure as the reference Archive page.
+
+      Desktop: 4 positions across.
+      Tablet: 3 positions across.
+      Mobile: 2 positions across.
+
+      The grid itself is completely invisible.
+
+      Every position contains an image.
+    */
+
+    .practice-grid {
+      width: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      column-gap: 42px;
+      row-gap: 90px;
+
+      margin-top: 120px;
+
+      align-items: start;
+    }
+
+    /*
+      Each image occupies a fixed invisible
+      grid position while maintaining its
+      natural proportions.
+
+      Nothing is cropped.
+      Nothing is stretched.
+    */
+
+    .practice-item {
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: center;
+
+      width: 100%;
+      height: 360px;
+
+      text-decoration: none;
+
+      transition: opacity 180ms ease;
+    }
+
+    .practice-item:hover {
+      opacity: 0.5;
+    }
+
+    .practice-image {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    /*
+      Accessibility
+    */
+
+    .practice-item:focus-visible,
+    .name:focus-visible,
+    .section-link:focus-visible,
+    footer a:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 4px;
+    }
+
+    /*
+      Navigation
+    */
+
+    .links {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 34px;
+
+      margin-top: 150px;
+    }
+
+    .section-link {
+      color: var(--black);
+      text-decoration: none;
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 3px;
+
+      transition: opacity 180ms ease;
+    }
+
+    .section-link:hover {
+      opacity: 0.5;
+    }
+
+    /*
+      Footer
+    */
+
+    footer {
+      width: 100%;
+
+      text-align: center;
+
+      padding-top: 30px;
+
+      color: var(--light);
+
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+
+      transition: opacity 180ms ease;
+    }
+
+    footer a:hover {
+      opacity: 0.5;
+    }
+
+    /*
+      Tablet
+    */
+
+    @media (max-width: 900px) {
+
+      .page {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .practice {
+        max-width: 100%;
+      }
+
+      .practice-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+
+        column-gap: 32px;
+        row-gap: 70px;
+
+        margin-top: 90px;
+      }
+
+      .practice-item {
+        height: 300px;
+      }
+    }
+
+    /*
+      Mobile
+    */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 28px 24px 22px;
+      }
+
+      .practice {
+        padding: 40px 0 60px;
+      }
+
+      .name {
+        font-size: 13px;
+      }
+
+      .practice-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        column-gap: 22px;
+        row-gap: 58px;
+
+        margin-top: 70px;
+      }
+
+      .practice-item {
+        height: 250px;
+      }
+
+      .links {
+        gap: 22px;
+
+        margin-top: 85px;
+      }
+
+      .section-link {
+        font-size: 13px;
+      }
+
+      footer {
+        padding-top: 24px;
+      }
+    }
+
+    /*
+      Small mobile
+    */
+
+    @media (max-width: 380px) {
+
+      .page {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .practice-grid {
+        column-gap: 16px;
+        row-gap: 48px;
+
+        margin-top: 60px;
+      }
+
+      .practice-item {
+        height: 210px;
+      }
+
+      .links {
+        gap: 16px;
+      }
+
+      .section-link {
+        font-size: 12px;
+      }
+    }
+
+    /*
+      Reduced motion
+    */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
+<body>
+
+  <div class="page">
+
+    <main>
+
+      <section
+        class="practice"
+        aria-label="Practice"
+      >
+
+        <a
+          class="name"
+          href="/"
+          aria-label="P"
+        >
+          P
+        </a>
+
+        <div class="practice-grid">
+
+          <a
+            class="practice-item"
+            href="/work-01.html"
+            aria-label="Practice item 01"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-01.jpg"
+              alt=""
+              loading="eager"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-02.html"
+            aria-label="Practice item 02"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-02.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-03.html"
+            aria-label="Practice item 03"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-03.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-04.html"
+            aria-label="Practice item 04"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-04.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-05.html"
+            aria-label="Practice item 05"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-05.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-06.html"
+            aria-label="Practice item 06"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-06.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-07.html"
+            aria-label="Practice item 07"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-07.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-08.html"
+            aria-label="Practice item 08"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-08.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-09.html"
+            aria-label="Practice item 09"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-09.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-10.html"
+            aria-label="Practice item 10"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-10.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-11.html"
+            aria-label="Practice item 11"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-11.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="practice-item"
+            href="/work-12.html"
+            aria-label="Practice item 12"
+          >
+            <img
+              class="practice-image"
+              src="/images/work-12.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+        </div>
+
+        <nav
+          class="links"
+          aria-label="Main navigation"
+        >
+
+          <a
+            class="section-link"
+            href="/"
+          >
+            Home
+          </a>
+
+          <a
+            class="section-link"
+            href="/about.html"
+          >
+            About
+          </a>
+
+          <a
+            class="section-link"
+            href="/process.html"
+          >
+            Process
+          </a>
+
+        </nav>
+
+      </section>
+
+    </main>
+
+    <footer>
+
+      <p>
+        P © 2025–2026 ·
+        <a href="/privacy.html">
+          Privacy
+        </a>
+        ·
+        <a href="/terms.html">
+          Terms
+        </a>
+      </p>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
