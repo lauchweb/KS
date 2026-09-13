@@ -155,12 +155,17 @@
     /*
       Identity
 
-      Kept centered above the composition.
-      Slightly larger and more defined than
-      the smaller internal page identity marks.
+      P sits at the top-left of the page,
+      matching the restrained identity used
+      throughout the site.
     */
 
     .name {
+      position: absolute;
+
+      top: 42px;
+      left: 48px;
+
       color: var(--black);
       text-decoration: none;
 
@@ -230,9 +235,6 @@
 
     /*
       Central image
-
-      Natural visual proportion is retained
-      through the fixed 4:5 composition.
     */
 
     .image {
@@ -354,6 +356,11 @@
         max-width: 100%;
       }
 
+      .name {
+        left: 36px;
+        top: 42px;
+      }
+
       .composition {
         gap: 52px;
       }
@@ -378,6 +385,9 @@
       }
 
       .name {
+        top: 28px;
+        left: 24px;
+
         font-size: 16px;
       }
 
@@ -418,6 +428,13 @@
       .page {
         padding-left: 20px;
         padding-right: 20px;
+      }
+
+      .name {
+        top: 24px;
+        left: 20px;
+
+        font-size: 15px;
       }
 
       .composition {
