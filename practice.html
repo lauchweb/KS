@@ -145,9 +145,6 @@
 
     /*
       Identity
-
-      The page does not need a visible "Practice" heading.
-      The work is the content of the page.
     */
 
     .name {
@@ -161,17 +158,18 @@
     }
 
     /*
-      FICTIVE GRID
+      INVISIBLE FICTIVE GRID
 
-      This is the same structural idea as the Archive page.
+      Same structure as Archive.
 
-      No borders.
-      No visible lines.
-      No boxes.
+      Desktop: 4 positions
+      Tablet: 3 positions
+      Mobile: 2 positions
 
-      Every grid position contains an actual work.
+      The grid has no visible lines,
+      borders, boxes, or backgrounds.
 
-      The space between works creates the breathing room.
+      Every position contains an actual work.
     */
 
     .work-grid {
@@ -190,6 +188,14 @@
       align-items: start;
     }
 
+    /*
+      Each work keeps its own proportions.
+
+      Nothing is cropped.
+      Nothing is stretched.
+      Nothing is forced into a fixed box.
+    */
+
     .work {
       width: 100%;
     }
@@ -204,11 +210,10 @@
     }
 
     /*
-      No captions for now.
+      No captions.
 
-      The works should be encountered without explanation.
-      Individual work pages can carry titles, dates,
-      materials, or other information when necessary.
+      The current work is encountered directly,
+      without explanatory text.
     */
 
     /*
@@ -217,6 +222,7 @@
 
     .links {
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -416,15 +422,12 @@
           P
         </a>
 
-
         <!--
-          CURRENT BODY OF WORK
+          CURRENT WORK
 
-          Invisible 4-column grid on desktop.
-          Invisible 3-column grid on tablet.
-          Invisible 2-column grid on mobile.
-
-          Every position contains an actual work.
+          Invisible fictive grid.
+          Every position contains a work.
+          No visible grid lines.
         -->
 
         <section
@@ -542,7 +545,6 @@
 
         </section>
 
-
         <nav
           class="links"
           aria-label="Main navigation"
@@ -574,7 +576,6 @@
       </article>
 
     </main>
-
 
     <footer>
 
