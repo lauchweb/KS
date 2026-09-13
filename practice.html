@@ -27,10 +27,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
 
-  <link
-    rel="canonical"
-    href="https://www.yourwebsite.com/practice.html"
-  >
+  <link rel="canonical" href="https://www.yourwebsite.com/practice.html">
 
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -99,6 +96,11 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     ::selection {
       background: var(--black);
       color: var(--background);
@@ -114,23 +116,29 @@
     main {
       flex: 1;
       display: flex;
-      align-items: center;
       justify-content: center;
     }
 
     .practice {
       width: 100%;
-      max-width: 680px;
+      max-width: 1100px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      padding: 60px 0;
+      padding: 60px 0 100px;
     }
+
+    /*
+      The text remains deliberately short.
+      The work is the main body of the page.
+    */
 
     .practice-text {
       width: 100%;
+      max-width: 680px;
+      margin-bottom: 120px;
     }
 
     .practice-text p {
@@ -148,13 +156,48 @@
       margin-bottom: 0;
     }
 
+    /*
+      FICTIVE GRID
+
+      No borders or visible grid lines.
+      Every position contains a work.
+      The space between works creates the breathing room.
+    */
+
+    .work-grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      column-gap: 72px;
+      row-gap: 120px;
+
+      align-items: start;
+    }
+
+    .work {
+      width: 100%;
+    }
+
+    .work img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /*
+      Keep the works quiet.
+      No captions unless they become necessary later.
+    */
+
     .links {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 34px;
 
-      margin-top: 72px;
+      margin-top: 150px;
     }
 
     .section-link {
@@ -207,6 +250,33 @@
       opacity: 0.5;
     }
 
+    @media (max-width: 800px) {
+
+      .page {
+        padding: 32px 28px 24px;
+      }
+
+      .practice {
+        max-width: 100%;
+        padding: 50px 0 80px;
+      }
+
+      .practice-text {
+        margin-bottom: 90px;
+      }
+
+      .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 40px;
+        row-gap: 80px;
+      }
+
+      .links {
+        margin-top: 110px;
+      }
+    }
+
     @media (max-width: 600px) {
 
       .page {
@@ -214,8 +284,11 @@
       }
 
       .practice {
-        max-width: 100%;
-        padding: 40px 0;
+        padding: 40px 0 60px;
+      }
+
+      .practice-text {
+        margin-bottom: 70px;
       }
 
       .practice-text p {
@@ -225,9 +298,14 @@
         line-height: 1.7;
       }
 
+      .work-grid {
+        column-gap: 22px;
+        row-gap: 58px;
+      }
+
       .links {
         gap: 22px;
-        margin-top: 58px;
+        margin-top: 85px;
       }
 
       .section-link {
@@ -248,6 +326,11 @@
 
       .practice-text p {
         font-size: 12px;
+      }
+
+      .work-grid {
+        column-gap: 16px;
+        row-gap: 48px;
       }
 
       .links {
@@ -295,50 +378,102 @@
             They accumulate traces of use, attachment, memory, and time.
             A photograph, an object, a fragment, or a familiar image can
             become a way into something less tangible — a feeling, a memory,
-            or a question that does not have a fixed answer.
+            or a question without a fixed answer.
           </p>
 
           <p>
             The work often begins with this kind of attention. Something
-            catches, lingers, or creates a sense of recognition. From there,
-            images and materials are gathered, altered, combined, and
-            revisited. Meaning is allowed to develop gradually rather than
-            being imposed from the beginning.
-          </p>
-
-          <p>
-            Physical and reproduced forms exist alongside one another.
-            Photographs, drawings, paintings, patterns, found elements, and
-            collected material can move between different states. Something
-            once encountered in everyday life can return in another form,
-            carrying traces of where it came from while becoming something
-            else.
-          </p>
-
-          <p>
-            Memory and time are present without necessarily being the subject.
-            They appear through worn surfaces, repetition, fragments,
-            alterations, absences, and the distance between an experience
-            and its recollection. The familiar can become uncertain simply
-            by being looked at differently.
-          </p>
-
-          <p>
-            The practice remains open to that movement. There is no single
-            medium or fixed method, and no requirement for an idea to remain
-            as it first appeared. Each body of work develops its own
-            language, allowing materials, images, and associations to
-            determine where it goes.
-          </p>
-
-          <p>
-            What matters is the possibility of following an idea far enough
-            for it to become something unexpected. The resulting works are
-            not intended to resolve everything they contain, but to leave
-            space for looking, remembering, and finding another way into them.
+            catches, lingers, or creates a sense of recognition. Images and
+            materials are gathered, altered, combined, and revisited.
+            Photographs, drawings, paintings, patterns, found elements,
+            and collected material can move between different states.
           </p>
 
         </div>
+
+        <!--
+          CURRENT BODY OF WORK
+
+          The grid is invisible.
+          Every grid position contains a work.
+          Replace the filenames below with your actual images.
+        -->
+
+        <section class="work-grid" aria-label="Current work">
+
+          <figure class="work">
+            <img
+              src="/images/work-01.jpg"
+              alt="Current work"
+              loading="eager"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-02.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-03.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-04.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-05.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-06.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-07.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-08.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="work">
+            <img
+              src="/images/work-09.jpg"
+              alt="Current work"
+              loading="lazy"
+            >
+          </figure>
+
+        </section>
 
         <nav class="links" aria-label="Main navigation">
 
@@ -361,13 +496,6 @@
             href="/process.html"
           >
             Process
-          </a>
-
-          <a
-            class="section-link"
-            href="/living-room.html"
-          >
-            Living Room
           </a>
 
         </nav>
