@@ -144,7 +144,10 @@
     }
 
     /*
-      Identity
+      Small identity mark.
+
+      No visible "Archive" heading.
+      The works are the archive.
     */
 
     .name {
@@ -160,18 +163,19 @@
     /*
       FICTIVE GRID
 
-      The structure is real,
-      but nothing is visibly drawn.
+      The grid is structural but invisible.
 
-      Desktop: 4 positions
-      Tablet: 3 positions
-      Mobile: 2 positions
+      Desktop: 4 positions across.
+      Tablet: 3 positions across.
+      Mobile: 2 positions across.
 
-      Every position contains one work.
+      Every position contains an actual work.
 
-      The cells have a consistent height so that
-      the underlying grid remains perceptible
-      even when artworks have different proportions.
+      There are no borders or visible grid lines.
+
+      The fixed height of each position makes
+      the underlying grid perceptible without
+      turning it into a visible gallery system.
     */
 
     .archive-grid {
@@ -187,25 +191,17 @@
 
       margin-top: 120px;
 
-      align-items: stretch;
+      align-items: start;
     }
 
-    /*
-      Each artwork occupies a complete invisible cell.
-
-      The cell has no border and no background.
-
-      The artwork is allowed to keep its own
-      natural proportions.
-    */
-
     .archive-item {
-      width: 100%;
-      min-width: 0;
-
       display: flex;
+
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
+
+      width: 100%;
+      height: 360px;
 
       text-decoration: none;
 
@@ -217,26 +213,22 @@
     }
 
     /*
-      Image remains natural.
+      The artwork keeps its own proportions.
 
-      No cropping.
-      No stretching.
-      No forced aspect ratio.
+      Nothing is cropped.
+      Nothing is stretched.
 
-      max-height prevents an unusually tall work
-      from destroying the rhythm of the grid.
+      The image sits inside its invisible
+      grid position.
     */
 
     .archive-image {
       display: block;
 
       width: 100%;
-      height: auto;
-
-      max-height: 420px;
+      height: 100%;
 
       object-fit: contain;
-      object-position: top left;
     }
 
     /*
@@ -257,7 +249,6 @@
 
     .links {
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -340,8 +331,8 @@
         margin-top: 90px;
       }
 
-      .archive-image {
-        max-height: 360px;
+      .archive-item {
+        height: 300px;
       }
     }
 
@@ -373,8 +364,8 @@
         margin-top: 70px;
       }
 
-      .archive-image {
-        max-height: 300px;
+      .archive-item {
+        height: 250px;
       }
 
       .links {
@@ -410,8 +401,8 @@
         margin-top: 60px;
       }
 
-      .archive-image {
-        max-height: 260px;
+      .archive-item {
+        height: 210px;
       }
 
       .links {
@@ -461,18 +452,15 @@
           P
         </a>
 
-
         <!--
-          ARCHIVE
-
-          Invisible fictive grid.
-
-          Desktop: 4 works per row.
-          Tablet: 3 works per row.
-          Mobile: 2 works per row.
+          INVISIBLE FICTIVE GRID
 
           Every position contains a work.
-          The grid itself is never drawn.
+          The positions themselves are not drawn.
+
+          Desktop: 4 columns
+          Tablet: 3 columns
+          Mobile: 2 columns
         -->
 
         <div class="archive-grid">
@@ -647,7 +635,6 @@
 
         </div>
 
-
         <nav
           class="links"
           aria-label="Main navigation"
@@ -686,7 +673,6 @@
       </section>
 
     </main>
-
 
     <footer>
 
