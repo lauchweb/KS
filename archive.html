@@ -1,1 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <title>Archive - P</title>
+
+  <meta
+    name="description"
+    content="An archive of images, objects, studies, and fragments gathered over time, reflecting an ongoing creative practice."
+  >
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+  >
+
+  <meta
+    name="googlebot"
+    content="index, follow, max-image-preview:large"
+  >
+
+  <meta name="author" content="P">
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+
+  <link rel="canonical" href="https://www.yourwebsite.com/archive.html">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Archive - P">
+  <meta
+    property="og:description"
+    content="An archive of images, objects, studies, and fragments gathered over time, reflecting an ongoing creative practice."
+  >
+  <meta
+    property="og:url"
+    content="https://www.yourwebsite.com/archive.html"
+  >
+  <meta property="og:site_name" content="P">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Archive - P">
+  <meta
+    name="twitter:description"
+    content="An archive of images, objects, studies, and fragments gathered over time, reflecting an ongoing creative practice."
+  >
+
+  <style>
+    :root {
+      --black: #111111;
+      --light: #888888;
+      --background: #ffffff;
+      --image-background: #f4f4f4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--background);
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--background);
+      color: var(--black);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    ::selection {
+      background: var(--black);
+      color: var(--background);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 42px 48px 28px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .archive {
+      width: 100%;
+      max-width: 880px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 60px 0;
+    }
+
+    .name {
+      color: var(--black);
+      text-decoration: none;
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+
+    .archive-title {
+      margin-top: 70px;
+
+      color: var(--black);
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 3px;
+    }
+
+    .archive-grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 70px 30px;
+
+      margin-top: 70px;
+    }
+
+    .archive-item {
+      display: block;
+
+      text-decoration: none;
+
+      transition: opacity 180ms ease;
+    }
+
+    .archive-item:hover {
+      opacity: 0.5;
+    }
+
+    .archive-image {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      background: var(--image-background);
+    }
+
+    .archive-item:focus-visible,
+    .name:focus-visible,
+    .section-link:focus-visible,
+    footer a:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 4px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+
+      margin-top: 72px;
+    }
+
+    .section-link {
+      color: var(--black);
+      text-decoration: none;
+
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 3px;
+
+      transition: opacity 180ms ease;
+    }
+
+    .section-link:hover {
+      opacity: 0.5;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+
+      padding-top: 30px;
+
+      color: var(--light);
+
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+
+      transition: opacity 180ms ease;
+    }
+
+    footer a:hover {
+      opacity: 0.5;
+    }
+
+    @media (max-width: 700px) {
+
+      .page {
+        padding: 28px 24px 22px;
+      }
+
+      .archive {
+        max-width: 100%;
+        padding: 40px 0;
+      }
+
+      .archive-title {
+        margin-top: 40px;
+        font-size: 13px;
+      }
+
+      .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px 20px;
+
+        margin-top: 40px;
+      }
+
+      .links {
+        gap: 22px;
+        margin-top: 58px;
+      }
+
+      .section-link {
+        font-size: 13px;
+      }
+
+      footer {
+        padding-top: 24px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .page {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .archive-title {
+        margin-top: 28px;
+        font-size: 12px;
+      }
+
+      .archive-grid {
+        gap: 28px 14px;
+        margin-top: 28px;
+      }
+
+      .links {
+        gap: 16px;
+      }
+
+      .section-link {
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <main>
+
+      <section class="archive" aria-label="Archive">
+
+        <a
+          class="name"
+          href="/"
+          aria-label="P"
+        >
+          P
+        </a>
+
+        <h1 class="archive-title">
+          Archive
+        </h1>
+
+        <div class="archive-grid">
+
+          <a
+            class="archive-item"
+            href="/work-01.html"
+            aria-label="Archive item 01"
+          >
+            <img
+              class="archive-image"
+              src="/archive-01.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="archive-item"
+            href="/work-02.html"
+            aria-label="Archive item 02"
+          >
+            <img
+              class="archive-image"
+              src="/archive-02.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="archive-item"
+            href="/work-03.html"
+            aria-label="Archive item 03"
+          >
+            <img
+              class="archive-image"
+              src="/archive-03.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="archive-item"
+            href="/work-04.html"
+            aria-label="Archive item 04"
+          >
+            <img
+              class="archive-image"
+              src="/archive-04.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="archive-item"
+            href="/work-05.html"
+            aria-label="Archive item 05"
+          >
+            <img
+              class="archive-image"
+              src="/archive-05.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <a
+            class="archive-item"
+            href="/work-06.html"
+            aria-label="Archive item 06"
+          >
+            <img
+              class="archive-image"
+              src="/archive-06.jpg"
+              alt=""
+              width="300"
+              height="375"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+        </div>
+
+        <nav class="links" aria-label="Main navigation">
+
+          <a
+            class="section-link"
+            href="/"
+          >
+            Home
+          </a>
+
+          <a
+            class="section-link"
+            href="/about.html"
+          >
+            About
+          </a>
+
+          <a
+            class="section-link"
+            href="/process.html"
+          >
+            Process
+          </a>
+
+          <a
+            class="section-link"
+            href="/practice.html"
+          >
+            Practice
+          </a>
+
+        </nav>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>
+        P © 2025–2026 ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
