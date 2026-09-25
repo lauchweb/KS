@@ -5,32 +5,45 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Andemik</title>
+  <title>NOU ANDEMIK</title>
 
   <meta
     name="description"
-    content="Andemik — fieldwork, laboratory research, and the conservation of endemic flora."
+    content="NOU ANDEMIK"
   >
 
-  <link rel="canonical" href="https://site.com/">
-  <link rel="icon" href="/favicon.ico">
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://nouandemik.site.com/"
+  >
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Andemik">
+  <meta property="og:title" content="NOU ANDEMIK">
   <meta
     property="og:description"
-    content="Andemik — fieldwork, laboratory research, and the conservation of endemic flora."
+    content="NOU ANDEMIK"
   >
-  <meta property="og:url" content="https://site.com/">
-  <meta property="og:image" content="https://site.com/og.jpg">
+  <meta
+    property="og:url"
+    content="https://nouandemik.site.com/"
+  >
+  <meta
+    property="og:image"
+    content="https://site.com/og.jpg"
+  >
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Andemik">
+  <meta name="twitter:title" content="NOU ANDEMIK">
   <meta
     name="twitter:description"
-    content="Andemik — fieldwork, laboratory research, and the conservation of endemic flora."
+    content="NOU ANDEMIK"
   >
-  <meta name="twitter:image" content="https://site.com/og.jpg">
+  <meta
+    name="twitter:image"
+    content="https://site.com/og.jpg"
+  >
 
   <style>
     :root {
@@ -38,8 +51,6 @@
       --text: #171717;
 
       --page-margin: clamp(20px, 4vw, 64px);
-      --image-gap: clamp(16px, 2vw, 32px);
-      --label-gap: 12px;
     }
 
     *,
@@ -88,12 +99,18 @@
         calc(var(--page-margin) * 0.8);
     }
 
+    /* -------------------------
+       Header
+    ------------------------- */
+
     .header {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
     }
 
-    .wordmark {
+    .wordmark,
+    .menu-link {
       color: var(--text);
 
       font-size: 14px;
@@ -105,77 +122,17 @@
       text-decoration: none;
     }
 
+    /* -------------------------
+       Main
+    ------------------------- */
+
     main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding-block: 8vh;
+      min-height: 0;
     }
 
-    .sections {
-      width: 100%;
-      max-width: 1100px;
-
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: var(--image-gap);
-
-      margin-inline: auto;
-    }
-
-    .section {
-      display: block;
-      min-width: 0;
-
-      color: var(--text);
-      text-align: center;
-
-      text-decoration: none;
-    }
-
-    .image-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-    }
-
-    .section img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-    }
-
-    .section-label {
-      display: inline-block;
-
-      margin-top: var(--label-gap);
-
-      color: var(--text);
-
-      font-size: 11px;
-      line-height: 1.2;
-
-      font-weight: 400;
-      letter-spacing: 0.10em;
-
-      text-transform: uppercase;
-
-      text-decoration-line: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-    }
-
-    .wordmark:focus-visible,
-    .section:focus-visible,
-    .footer a:focus-visible {
-      outline: 1px solid var(--text);
-      outline-offset: 4px;
-    }
+    /* -------------------------
+       Footer
+    ------------------------- */
 
     .footer {
       display: grid;
@@ -214,31 +171,29 @@
       text-underline-offset: 3px;
     }
 
+    .wordmark:focus-visible,
+    .menu-link:focus-visible,
+    .footer a:focus-visible {
+      outline: 1px solid var(--text);
+      outline-offset: 4px;
+    }
+
     .footer-dot {
       user-select: none;
     }
 
+    /* -------------------------
+       Mobile
+    ------------------------- */
+
     @media (max-width: 600px) {
       :root {
         --page-margin: 20px;
-        --image-gap: 16px;
-        --label-gap: 11px;
       }
 
-      .wordmark {
+      .wordmark,
+      .menu-link {
         font-size: 14px;
-      }
-
-      .sections {
-        max-width: none;
-      }
-
-      main {
-        padding-block: 6vh;
-      }
-
-      .section-label {
-        font-size: 11px;
       }
 
       .footer {
@@ -264,15 +219,11 @@
     @media (max-width: 340px) {
       :root {
         --page-margin: 16px;
-        --image-gap: 12px;
       }
 
-      .wordmark {
+      .wordmark,
+      .menu-link {
         font-size: 13px;
-      }
-
-      .section-label {
-        font-size: 10px;
       }
 
       .footer {
@@ -287,55 +238,30 @@
   <div class="site">
 
     <header class="header">
+
       <a
         class="wordmark"
-        href="/"
-        aria-label="Andemik home"
+        href="https://site.com/"
+        aria-label="NOU ANDEMIK home"
       >
-        ANDEMIK
+        NOU ANDEMIK
       </a>
+
+      <a
+        class="menu-link"
+        href="https://nursery.site.com/"
+        aria-label="Nursery"
+      >
+        NURSERY
+      </a>
+
     </header>
 
+
     <main>
-      <nav
-        class="sections"
-        aria-label="Andemik sections"
-      >
-
-        <a
-          class="section"
-          href="https://field.site.com"
-        >
-          <div class="image-wrap">
-            <img
-              src="/field.jpg"
-              alt=""
-              loading="eager"
-              decoding="async"
-            >
-          </div>
-
-          <span class="section-label">FIELD</span>
-        </a>
-
-        <a
-          class="section"
-          href="https://lab.site.com"
-        >
-          <div class="image-wrap">
-            <img
-              src="/lab.jpg"
-              alt=""
-              loading="eager"
-              decoding="async"
-            >
-          </div>
-
-          <span class="section-label">LAB</span>
-        </a>
-
-      </nav>
+      <!-- Main content will be added here -->
     </main>
+
 
     <footer class="footer">
 
